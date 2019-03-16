@@ -1,0 +1,32 @@
+/*
+ArtXperience CSS Module
+ComponentName
+*/
+.form-group {
+  position: relative;
+  flex-basis: 70%;
+  flex-grow: 1;
+  
+  min-width: 70%;
+  min-height: 32px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  margin: 5px auto;
+}
+
+.form-group label {
+  flex-basis: 100%;
+  width: 100%;
+
+  margin: 0 0 10px;
+}
+
+.form-group input {
+  flex-basis: 100%;
+  width: 100%;
+}

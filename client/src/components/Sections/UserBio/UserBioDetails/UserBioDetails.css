@@ -1,0 +1,24 @@
+/*
+ArtXperience CSS Module
+UserBioDetails
+*/
+.user-bio-details h1, .user-bio-details h2,
+.user-bio-details h3, .user-bio-details h4,
+.user-bio-details h5, .user-bio-details h6 {
+  color: black;
+  margin: 0;
+  font-weight: normal;
+}
+
+.user-bio-details h2 {
+  font-size: 1.3em;
+}
+
+.user-bio-details h3 {
+  font-size: 1.05em;
+}
+
+.user-bio-details .user-bio-header > div,
+.user-bio-details .user-bio-about-me > div {
+  color: rgb(104, 104, 104);
+}

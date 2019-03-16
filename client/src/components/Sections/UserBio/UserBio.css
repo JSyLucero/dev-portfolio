@@ -1,0 +1,28 @@
+.user-bio {
+  padding: 25px 0;
+  min-height: 200px;
+
+  text-align: center;
+
+  background-color: rgb(215, 222, 224);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.user-bio .content-block {
+  background: transparent;
+}
+
+.user-bio-content {
+  margin: 0 auto;
+  
+  max-width: 768px;
+  min-height: 100%;
+}
+
+.user-bio-content .user-bio-details {
+  margin-left: 15px;
+
+  text-align: left;
+}

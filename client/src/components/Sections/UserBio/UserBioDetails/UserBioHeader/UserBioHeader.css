@@ -1,0 +1,33 @@
+/*
+ArtXperience CSS Module
+UserBioHeader
+*/
+
+.user-bio-header .user-extras > * {
+  display: inline-block;
+
+  font-size: 0.825em;
+}
+
+.user-extras > div:first-child,
+.user-extras > a:first-child {
+  padding: 0 5px 0 0; 
+}
+
+.user-extras > div:first-child,
+.user-extras > div,
+.user-extras > a:first-child,
+.user-extras > a {
+  border-right: 2px solid rgb(186, 186, 186);
+}
+
+.user-extras > div,
+.user-extras > a {
+  padding: 0 5px;
+}
+
+.user-extras > div:last-child,
+.user-extras > a:last-child {
+  border: 0;
+  padding: 0 0 0 5px;
+}
