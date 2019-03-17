@@ -1,5 +1,5 @@
 /*
-ArtXperience Component
+Component
 LoginModal
 */
 import React, { Component } from 'react';
