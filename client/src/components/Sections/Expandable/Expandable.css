@@ -10,8 +10,7 @@
 }
 
 .expandable-details-item .expandable-details-item-label {
-  min-width: 100px;
-  max-width: 200px;
+  min-width: 150px;
 
   text-align: right;
 }
