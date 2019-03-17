@@ -35,11 +35,11 @@ class Home extends Component {
   }
 
   handleActiveTab = (event, value) => {
-    this.setState({ activeTab: value });
+    this.setState({ activeTab: value, expanded: "" });
   }
 
   handleActiveTabSwipe = index => {
-    this.setState({ activeTab: index })
+    this.setState({ activeTab: index, expanded: "" });
   }
 
   handleExpand = panel => (event, expanded) => {
@@ -120,99 +120,127 @@ class Home extends Component {
                   onChangeIndex={this.handleActiveTabSwipe}
                 >
                   <div className="padding-15">
-                  <Expandable onChange={this.handleExpand('project-1')}
-                    Heading="ArtXperience" expanded={expanded === "project-1"}
-                    Subheading={<Capsule label="Art Portfolio/Community Web App"/>}>
-                    <div className="expandable-details-item">
-                      <div className="expandable-details-item-label">
-                        <Capsule label="Technology"/>
+                    <Expandable onChange={this.handleExpand('project-1')}
+                      Heading="ArtXperience" expanded={expanded === "project-1"}
+                      Subheading={<Capsule label="Art Portfolio/Community Web App"/>}>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="Technology"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          MongoDB, Express, React, NodeJS
+                        </div>
                       </div>
-                      <div className="expandable-details-item-desc">
-                        MongoDB, Express, React, NodeJS
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="Repository"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          Private Repository
+                        </div>
                       </div>
-                    </div>
-                    <div className="expandable-details-item">
-                      <div className="expandable-details-item-label">
-                        <Capsule label="Repository"/>
+                    </Expandable>
+                    <Expandable onChange={this.handleExpand('project-2')}
+                      Heading="Chat Room" expanded={expanded === "project-2"}
+                      Subheading={<Capsule label="Chat Application [COMP3133 Assignment]"/>}>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="Technology"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          MongoDB, Express, HTML5/CSS3, NodeJS
+                        </div>
                       </div>
-                      <div className="expandable-details-item-desc">
-                        <Link PageName="GitLab"/>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="Repository"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          <Link Url="https://github.com/jaepun/comp3133_assignment" PageName="GitHub"/>
+                        </div>
                       </div>
-                    </div>
-                  </Expandable>
-                  <Expandable onChange={this.handleExpand('project-2')}
-                    Heading="Chat Room" expanded={expanded === "project-2"}
-                    Subheading={<Capsule label="Chat Application [COMP3133 Assignment]"/>}>
-                    <div className="expandable-details-item">
-                      <div className="expandable-details-item-label">
-                        <Capsule label="Technology"/>
+                    </Expandable>
+                    <Expandable onChange={this.handleExpand('project-3')}
+                      Heading="Gamer Friends' List" expanded={expanded === 'project-3'}
+                      Subheading={<Capsule label="Pseudo Friends' List App [COMP3123 Assignment]"/>}>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="Technology"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          MongoDB, Express, AngularJS, NodeJS
+                        </div>
                       </div>
-                      <div className="expandable-details-item-desc">
-                        MongoDB, Express, HTML5/CSS3, NodeJS
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="Repository"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          <Link Url="https://github.com/JSyLucero/comp3123_assignment1" PageName="GitHub"/>
+                        </div>
                       </div>
-                    </div>
-                    <div className="expandable-details-item">
-                      <div className="expandable-details-item-label">
-                        <Capsule label="Repository"/>
+                    </Expandable>
+                    <Expandable onChange={this.handleExpand('project-4')}
+                      Heading="Versus" expanded={expanded === 'project-4'}
+                      Subheading={<Capsule label="Tournament Brackets Web App"/>}>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="Technology"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          MySQL &amp; PHP
+                        </div>
                       </div>
-                      <div className="expandable-details-item-desc">
-                        <Link PageName="GitHub"/>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="Repository"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          <Link Url="https://bitbucket.org/synogen/website-repo/" PageName="BitBucket"/>
+                        </div>
                       </div>
-                    </div>
-                  </Expandable>
-                  <Expandable onChange={this.handleExpand('project-3')}
-                    Heading="Gamer Friends' List" expanded={expanded === 'project-3'}
-                    Subheading={<Capsule label="Pseudo Friends' List App [COMP3123 Assignment]"/>}>
-                    <div className="expandable-details-item">
-                      <div className="expandable-details-item-label">
-                        <Capsule label="Technology"/>
-                      </div>
-                      <div className="expandable-details-item-desc">
-                        MongoDB, Express, AngularJS, NodeJS
-                      </div>
-                    </div>
-                    <div className="expandable-details-item">
-                      <div className="expandable-details-item-label">
-                        <Capsule label="Repository"/>
-                      </div>
-                      <div className="expandable-details-item-desc">
-                        <Link PageName="GitHub"/>
-                      </div>
-                    </div>
-                  </Expandable>
-                  <Expandable onChange={this.handleExpand('project-4')}
-                    Heading="Versus" expanded={expanded === 'project-4'}
-                    Subheading={<Capsule label="Tournament Brackets Web App"/>}>
-                    <div className="expandable-details-item">
-                      <div className="expandable-details-item-label">
-                        <Capsule label="Technology"/>
-                      </div>
-                      <div className="expandable-details-item-desc">
-                        MySQL &amp; PHP
-                      </div>
-                    </div>
-                    <div className="expandable-details-item">
-                      <div className="expandable-details-item-label">
-                        <Capsule label="Repository"/>
-                      </div>
-                      <div className="expandable-details-item-desc">
-                        <Link PageName="GitLab"/>
-                      </div>
-                    </div>
-                  </Expandable>
+                    </Expandable>
                   </div>
                   <div className="padding-15">
-                  <Expandable onChange={this.handleExpand('gbc-t127')}
-                    Heading="T127 - Computer Programmer Analyst" 
-                    expanded={expanded === 'gbc-t127'}
-                    Subheading={<Capsule label="George Brown College - Casa Loma"/>}>
-                    
-                  </Expandable>
+                    <Expandable onChange={this.handleExpand('gbc-t127')}
+                      Heading="T127 - Computer Programmer Analyst" 
+                      expanded={expanded === 'gbc-t127'}
+                      Subheading={<Capsule label="George Brown College - Casa Loma"/>}>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="School Years"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          2015 - 2019
+                        </div>
+                      </div>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="Diploma"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          Advanced Diploma
+                        </div>
+                      </div>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="School Website"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          <Link Url="https://www.georgebrown.ca/" PageName="George Brown College"/>
+                        </div>
+                      </div>
+                    </Expandable>
                   </div>
                   <div className="padding-15">
                     <Expandable onChange={this.handleExpand('job-resources')}
-                      Heading="Resources" expanded={expanded === 'job-resources'}>
-
+                      Heading="Resources" expanded={expanded === 'job-resources'}
+                      Subheading={<Capsule label="Application Files"/>}>
+                      <div className="expandable-details-item">
+                        <h3>Downloads: </h3>
+                        <Capsule label="Resume" color="secondary" onClick={() => { window.open(`${location.protocol}//${location.host}/downloads/Jullian_Sy-Lucero_Resume.pdf`)}}/>
+                        <Capsule label="Cover Letter"/>
+                      </div>
                     </Expandable>
                   </div>
                 </SwipeableViews>
