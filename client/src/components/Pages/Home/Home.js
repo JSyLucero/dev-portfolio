@@ -238,7 +238,7 @@ class Home extends Component {
                       Subheading={<Capsule label="Application Files"/>}>
                       <div className="expandable-details-item">
                         <h3>Downloads: </h3>
-                        <Capsule label="Resume" color="secondary" onClick={() => { window.open(`${location.protocol}//${location.host}/downloads/Jullian_Sy-Lucero_Resume.pdf`)}}/>
+                        <Capsule label="Resume" color="secondary" onClick={() => { window.open(`${location.protocol}//${location.host}/downloads/Resume_JSyLucero.pdf`)}}/>
                         <Capsule label="Cover Letter"/>
                       </div>
                     </Expandable>
