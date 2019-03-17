@@ -121,8 +121,8 @@ class Home extends Component {
                 >
                   <div className="padding-15">
                     <Expandable onChange={this.handleExpand('project-1')}
-                      Heading="ArtXperience" expanded={expanded === "project-1"}
-                      Subheading={<Capsule label="Art Portfolio/Community Web App"/>}>
+                      Heading="Developer's Portfolio" expanded={expanded === "project-1"}
+                      Subheading={<Capsule label=""/>}>
                       <div className="expandable-details-item">
                         <div className="expandable-details-item-label">
                           <Capsule label="Technology"/>
@@ -136,12 +136,31 @@ class Home extends Component {
                           <Capsule label="Repository"/>
                         </div>
                         <div className="expandable-details-item-desc">
-                          Private Repository
+                          <Link Url="https://github.com/jsylucero/dev-portfolio" PageName="GitHub"/>
                         </div>
                       </div>
                     </Expandable>
-                    <Expandable onChange={this.handleExpand('project-2')}
-                      Heading="Chat Room" expanded={expanded === "project-2"}
+                    <Expandable onChange={this.handleExpand('art-ax')}
+                      Heading="ArtXperience" expanded={expanded === "art-ax"}>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="Technology"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          MongoDB, Express, React, NodeJS
+                        </div>
+                      </div>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <Capsule label="Repository"/>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          <Link Url="https://gitlab.com/Delta-Axis/art-ax" PageName="GitLab"/>
+                        </div>
+                      </div>
+                    </Expandable>
+                    <Expandable onChange={this.handleExpand('comp3133-assignment')}
+                      Heading="Chat Room" expanded={expanded === "comp3133-assignment"}
                       Subheading={<Capsule label="Chat Application [COMP3133 Assignment]"/>}>
                       <div className="expandable-details-item">
                         <div className="expandable-details-item-label">
@@ -160,8 +179,8 @@ class Home extends Component {
                         </div>
                       </div>
                     </Expandable>
-                    <Expandable onChange={this.handleExpand('project-3')}
-                      Heading="Gamer Friends' List" expanded={expanded === 'project-3'}
+                    <Expandable onChange={this.handleExpand('comp3123-assignment')}
+                      Heading="Gamer Friends' List" expanded={expanded === 'comp3123-assignment'}
                       Subheading={<Capsule label="Pseudo Friends' List App [COMP3123 Assignment]"/>}>
                       <div className="expandable-details-item">
                         <div className="expandable-details-item-label">
@@ -180,9 +199,9 @@ class Home extends Component {
                         </div>
                       </div>
                     </Expandable>
-                    <Expandable onChange={this.handleExpand('project-4')}
-                      Heading="Versus" expanded={expanded === 'project-4'}
-                      Subheading={<Capsule label="Tournament Brackets Web App"/>}>
+                    <Expandable onChange={this.handleExpand('comp1230-assignment')}
+                      Heading="Versus" expanded={expanded === 'comp1230-assignment'}
+                      Subheading={<Capsule label="Tournament Brackets Web App [COMP1230 Assignment]"/>}>
                       <div className="expandable-details-item">
                         <div className="expandable-details-item-label">
                           <Capsule label="Technology"/>
