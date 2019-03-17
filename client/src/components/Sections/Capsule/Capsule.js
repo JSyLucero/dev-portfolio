@@ -6,10 +6,9 @@ import React, { Component } from 'react';
 import './Capsule.css';
 
 // Material UI imports
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { withStyles } from '@material-ui/core/styles';
-import Chip from '@material-ui/core/Chip';
-import blueGrey from '@material-ui/core/colors/blueGrey';
+import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
+import { Chip } from '@material-ui/core';
+import { blueGrey, deepPurple } from '@material-ui/core/colors';
 
 const theme = createMuiTheme({
   palette: {
@@ -17,7 +16,7 @@ const theme = createMuiTheme({
       main: blueGrey[100]
     },
     secondary: {
-      main: '#f44336',
+      main: deepPurple[500],
     },
   },
 });
@@ -42,7 +41,7 @@ class CapsuleComponent extends Component {
     const { classes, label, color, onClick, onDelete } = this.props;
     return (
       <MuiThemeProvider theme={theme}>
-        <Chip label={label} color="primary" 
+        <Chip label={label} color={color ? color : "primary"} 
           className={classes.chip} 
           onClick={onClick} 
           onDelete={onDelete} 
