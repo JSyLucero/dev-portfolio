@@ -15,6 +15,18 @@ import Tab from '@material-ui/core/Tab';
 
 import { UserAuthSubscriber } from 'services';
 
+const getDefaultExpanded = (activeTab) => {
+  let expanded = "";
+  if (activeTab === 0)
+    expanded = "career-goal-statement"
+  if (activeTab === 2)
+    expanded = "gbc-t127"
+  if (activeTab === 3)
+    expanded = "capstone-documents"
+  
+  return expanded;
+}
+
 class Home extends Component {
 	constructor(props) {
 		super(props);
@@ -24,7 +36,7 @@ class Home extends Component {
     profilePicSize: window.innerWidth <= 800 ? 10 : 3,
     aboutSize: window.innerWidth <= 800 ? 10 : 7,
     activeTab: 0,
-    expanded: ""
+    expanded: getDefaultExpanded(0)
   }
 
   updateSize = () => {
@@ -35,11 +47,13 @@ class Home extends Component {
   }
 
   handleActiveTab = (event, value) => {
-    this.setState({ activeTab: value, expanded: "" });
+    let expanded = getDefaultExpanded(value);
+    this.setState({ activeTab: value, expanded: expanded });
   }
 
   handleActiveTabSwipe = index => {
-    this.setState({ activeTab: index, expanded: "" });
+    let expanded = getDefaultExpanded(index);
+    this.setState({ activeTab: index, expanded: expanded });
   }
 
   handleExpand = panel => (event, expanded) => {
@@ -84,7 +98,8 @@ class Home extends Component {
                   <h2 style={{fontSize: "1.15em", fontWeight: "normal"}}>Modern Programmer with C# and JavaScript (React/ES6)</h2>
                   <section style={{ 
                     fontSize: "1.1em", 
-                    width: "100%", 
+                    width: "100%",
+                    maxWidth: "1280px", 
                     marginTop: "10px", 
                     borderTop: "1px solid rgb(220, 220, 220)", 
                     paddingTop: "10px",
@@ -92,13 +107,17 @@ class Home extends Component {
                     maxHeight: "325px",
                     overflowY: "overlay",
                   }}>
-                    Hello, I am currently a student at George Brown College in the program named Computer Programmer Analyst (T127). I do not have a lot of experience, however, I have knowledge in languages such as C#, JavaScript (React/ES6) and PHP along with various other languages.
+                    Hello, my name is Jullian Anthony Sy-Lucero, and I'm a developer studying at George Brown College in 
+                    the T127 - Computer Programmer Analyst program, and am currently in my final year.
                     <br/><br/>
-                    In projects I hope to contribute well, and improve code as much as possible, and when tasked to learn new technologies I attempt to learn quickly and agile in order to adapt and implement new technologies.
+                    As a part of a team, in projects, I hope to contribute well and improve code as much as possible, and when tasked to learn new technologies 
+                    I learn quickly and agile in order to adapt and implement new technologies. I strongly believe in having a solid foundation in a code base, 
+                    and therefore when accepted, I wish to solve issues thoroughly while trying to implement quick, as well as readable, and modular/reusable code.
                     <br/><br/>
-                    As a part of a team I strongly believe in having a solid foundation in a code base, and therefore when accepted, I wish to be able to solve issues thoroughly while trying to implement quick, as well as readable, and potentially modular/reusable code.
+                    I have knowledge in languages such as C#, JavaScript (ES6) and PHP along with various other languages.
                     <br/><br/>
-                    In complement to my programming skills, I also have a hobby in creating designs for my personal use for projects related and non-related to software, when tasked with design, I will apply my design knowledge in order to implement a fluent, smooth user experience in software.
+                    In complement to my skills as a developer, I also have a hobby in creating designs for my personal use for projects related and non-related to software, 
+                    when tasked with design, I will apply my knowledge in order to implement a fluid, smooth user experience in software.
                   </section>
                 </ContentBlock>
               </ContentBlock>
@@ -110,15 +129,47 @@ class Home extends Component {
                   indicatorColor="primary"
                   textColor="primary"
                   onChange={this.handleActiveTab}>
+                  <Tab label="Job Related" />
                   <Tab label="Projects" />
                   <Tab label="Education" />
-                  <Tab label="Job Related" />
+                  <Tab label="Capstone" />
                 </Tabs>
                 <SwipeableViews
                   axis={'x'}
                   index={this.state.activeTab}
                   onChangeIndex={this.handleActiveTabSwipe}
                 >
+                  <div className="padding-15">
+                    <Expandable onChange={this.handleExpand('career-goal-statement')}
+                      Heading="Statement of Career Goal" expanded={expanded === 'career-goal-statement'}>
+                      <div style={{ maxWidth: "1024px" }}>
+                        As a developer, I hope to really further my knowledge in development. I would like to maximize my skills to the fullest potential.
+                        <br/><br/>
+                        In the development field, I would like to improve and accelerate in creating, preparing and utilizing modular/reusable code.
+                        I wish to be able to contribute well to any team I join and ease up the workloads with this ability. Even further, I am willing 
+                        to learn new technologies, and programming languages, as it's fun, and broadens my pool of knowledge.
+                        <br/><br/>
+                        In complement to my skills as a developer, I also have a hobby in creating designs for personal use for projects related and non-related to software.
+                        So in being tasked with works related to design, I wish to be able to apply my knowledge, and help contribute to design teams when possible, especially
+                        in frontend development workloads. 
+                        <br/><br/>
+                        I strongly believe in giving an amazing user experience, and enjoy building up applications that meet a user's needs. 
+                      </div>
+                    </Expandable>
+                    <Expandable onChange={this.handleExpand('job-resources')}
+                      Heading="Resources" expanded={expanded === 'job-resources'}
+                      Subheading={<Capsule label="Application Files"/>}>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <h3>Downloads: </h3>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          <Capsule label="Resume" color="secondary" onClick={() => { window.open(`${location.protocol}//${location.host}/downloads/Resume_JSyLucero.pdf`, '_blank')}}/>
+                          <Capsule label="Cover Letter"/>
+                        </div>
+                      </div>
+                    </Expandable>
+                  </div>
                   <div className="padding-15">
                     <Expandable onChange={this.handleExpand('project-1')}
                       Heading="Developer's Portfolio" expanded={expanded === "project-1"}>
@@ -230,7 +281,7 @@ class Home extends Component {
                           <Capsule label="School Years"/>
                         </div>
                         <div className="expandable-details-item-desc">
-                          2015 - 2019
+                          2015 - 2017 (1st &amp; 2nd Year), 2018 - 2019 (3rd Year)
                         </div>
                       </div>
                       <div className="expandable-details-item">
@@ -250,15 +301,47 @@ class Home extends Component {
                         </div>
                       </div>
                     </Expandable>
+                    <br/>
+                    <Expandable onChange={this.handleExpand('academic-credentials')}
+                      Heading="Academic Credentials" expanded={expanded === "academic-credentials"}>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <h3>Honours: </h3>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          <Capsule label="T127 Honours - Fall 2018" color="secondary" onClick={() => { window.open(`${location.protocol}//${location.host}/downloads/t127_fall_2018_honours_letter.pdf`, '_blank')}}/>
+                        </div>
+                      </div>
+                    </Expandable>
                   </div>
                   <div className="padding-15">
-                    <Expandable onChange={this.handleExpand('job-resources')}
-                      Heading="Resources" expanded={expanded === 'job-resources'}
-                      Subheading={<Capsule label="Application Files"/>}>
+                    <Expandable onChange={this.handleExpand('capstone-documents')}
+                      Heading="Documents" expanded={expanded === 'capstone-documents'}
+                      Subheading={<Capsule label="Capstone Documents"/>}>
                       <div className="expandable-details-item">
-                        <h3>Downloads: </h3>
-                        <Capsule label="Resume" color="secondary" onClick={() => { window.open(`${location.protocol}//${location.host}/downloads/Resume_JSyLucero.pdf`)}}/>
-                        <Capsule label="Cover Letter"/>
+                        <div className="expandable-details-item-label">
+                          <h3>Files: </h3>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          <Capsule label="Project Vision" color="secondary" 
+                            onClick={() => { window.open(`https://docs.google.com/document/d/16L2pd4aVmtB29cn99NhO_GCnokO4TB7bTQSQb6AeLkY`, '_blank')}}/>
+                          <Capsule label="Project/Business Requirements" color="secondary" 
+                            onClick={() => { window.open(`https://docs.google.com/document/d/1OlroM_XRVe1zESa61TPRiBE2WbFT-xIWM7E9Ik5f5ls`, '_blank') }}/>
+                          <Capsule label="Project Plan" color="secondary" 
+                            onClick={() => { window.open(`https://docs.google.com/document/d/1cYi13MqwU9pe_wpbY-N05W-1kO1lBj2wA5WchIKAALM`, '_blank') }}/>
+                          <Capsule label="Requirements Analysis &amp; Design" color="secondary" 
+                            onClick={() => { window.open(`https://docs.google.com/document/d/1DmFEBKhlmbZgmfkBSRQrY6OGWypFOw3C-SKkBFXt7OY`, '_blank') }}/>
+                          <Capsule label="Wireframes/Mockups" color="secondary" 
+                            onClick={() => { window.open(`https://xd.adobe.com/view/deb1ae56-c1ca-4149-4162-824326ad590f-a880/?hints=off`, '_blank') }}/>
+                          <Capsule label="Status Report 1" color="secondary" 
+                            onClick={() => { window.open(`https://docs.google.com/document/d/1HAK0TzSffAVrSrSgRCaSF_2Pmcw56x0ErFzkIfB0DDM`, '_blank') }}/>
+                          <Capsule label="Status Report 2" color="secondary" 
+                            onClick={() => { window.open(`https://docs.google.com/document/d/1ibJeigkNQdL0fxd_c-TSMRoAmHMMVNIDBIn1AFT0Kx4`, '_blank') }}/>
+                          <Capsule label="Status Report 3" color="secondary" 
+                            onClick={() => { window.open(`https://docs.google.com/document/d/1txoZyiopjdM55GYi9JFTRTD5pacEzvJmnPbdLL0s5wY`, '_blank') }}/>
+                          <Capsule label="Systems Implementation" color="secondary"
+                            onClick={() => { window.open(`https://docs.google.com/document/d/15c5zSe4bsUgzbFLlm92rC7cFvExn8o4POXoJXMUodXA`, '_blank') }}/>
+                        </div>
                       </div>
                     </Expandable>
                   </div>
