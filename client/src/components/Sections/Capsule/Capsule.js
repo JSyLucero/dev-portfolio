@@ -32,7 +32,8 @@ const styles = theme => ({
     maxWidth: "100%",
     whiteSpace: "nowrap",
     overflow: "hidden",
-    textOverflow: "ellipsis"
+    textOverflow: "ellipsis",
+    textAlign: "left"
   },
 });
 

@@ -2,3 +2,6 @@
 ArtXperience CSS Module
 Home
 */
+.MuiTabs-root-1 button {
+  min-width: initial;
+}

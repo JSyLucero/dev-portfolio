@@ -2,3 +2,17 @@
 CSS Module
 Capsule
 */
+@media screen and (max-width: 740px) {
+  .MuiExpansionPanelSummary-content-67 .CapsuleComponent-chip-126 {
+    min-width: 120px !important;
+    max-width: 120px !important;
+  }
+
+  .MuiExpansionPanelSummary-content-67 .MuiChip-label-146 {
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+  }
+}

@@ -10,8 +10,7 @@ import css from './Home.css';
 import SwipeableViews from 'react-swipeable-views';
 
 // Material UI imports
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import { Tabs, Tab } from '@material-ui/core';
 
 import { UserAuthSubscriber } from 'services';
 
@@ -36,11 +35,13 @@ class Home extends Component {
     profilePicSize: window.innerWidth <= 800 ? 10 : 3,
     aboutSize: window.innerWidth <= 800 ? 10 : 7,
     activeTab: 0,
-    expanded: getDefaultExpanded(0)
+    expanded: getDefaultExpanded(0),
+    windowWidth: window.innerWidth
   }
 
   updateSize = () => {
     this.setState({
+      windowWidth: window.innerWidth,
       profilePicSize: window.innerWidth <= 800 ? 10 : 3,
       aboutSize: window.innerWidth <= 800 ? 10 : 7,
     });
@@ -72,7 +73,7 @@ class Home extends Component {
   }
 
 	render() {
-    const { profilePicSize, aboutSize, activeTab, expanded } = this.state;
+    const { profilePicSize, aboutSize, windowWidth, activeTab, expanded } = this.state;
 
 		return (
 			<UserAuthSubscriber>
@@ -125,6 +126,8 @@ class Home extends Component {
             <ContentBlock className="d-flex padding-25" style={{ background: "rgba(230, 230, 230, 1.0)" }}>
               <ContentBlock style={{boxShadow: "0 0 15px rgba(0, 0, 0, 0.07225)"}}>
                 <Tabs style={{ background: "rgb(245, 245, 245)" }}
+                  variant="scrollable"
+                  scrollButtons="on"
                   value={activeTab}
                   indicatorColor="primary"
                   textColor="primary"
@@ -275,7 +278,7 @@ class Home extends Component {
                     <Expandable onChange={this.handleExpand('gbc-t127')}
                       Heading="T127 - Computer Programmer Analyst" 
                       expanded={expanded === 'gbc-t127'}
-                      Subheading={<Capsule label="George Brown College - Casa Loma"/>}>
+                      Subheading={<Capsule label={windowWidth <= 740 ? `GBC` : `George Brown College - Casa Loma`}/>}>
                       <div className="expandable-details-item">
                         <div className="expandable-details-item-label">
                           <Capsule label="School Years"/>
@@ -317,7 +320,7 @@ class Home extends Component {
                   <div className="padding-15">
                     <Expandable onChange={this.handleExpand('capstone-documents')}
                       Heading="Documents" expanded={expanded === 'capstone-documents'}
-                      Subheading={<Capsule label="Capstone Documents"/>}>
+                      Subheading={<Capsule label={windowWidth <= 740 ? `Capstone Docs` : `Capstone Documents`}/>}>
                       <div className="expandable-details-item">
                         <div className="expandable-details-item-label">
                           <h3>Files: </h3>
