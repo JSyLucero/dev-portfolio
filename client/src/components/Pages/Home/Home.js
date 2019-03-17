@@ -1,43 +1,21 @@
 /*
-ArtXperience Component
+Component
 Home
 */
 import React, { Component } from 'react';
 import { ContentArea, ContentBlock, Link } from 'Layout';
-import { FooterContent } from 'Sections';
+import { FooterContent, Expandable, Capsule } from 'Sections';
 import css from './Home.css';
 
 import SwipeableViews from 'react-swipeable-views';
 
-// Material UI
-import { withStyles } from '@material-ui/core/styles';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+// Material UI imports
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
 
 import { UserAuthSubscriber } from 'services';
 
-const styles = theme => ({
-  root: {
-    width: '100%',
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    flexBasis: '33.33%',
-    flexShrink: 0,
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary,
-  },
-});
-
-class HomePage extends Component {
-
+class Home extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -80,7 +58,6 @@ class HomePage extends Component {
   }
 
 	render() {
-    const { classes } = this.props;
     const { profilePicSize, aboutSize, activeTab, expanded } = this.state;
 
 		return (
@@ -129,7 +106,7 @@ class HomePage extends Component {
             <ContentBlock className="d-flex padding-25" style={{ background: "rgba(230, 230, 230, 1.0)" }}>
               <ContentBlock style={{boxShadow: "0 0 15px rgba(0, 0, 0, 0.07225)"}}>
                 <Tabs style={{ background: "rgb(245, 245, 245)" }}
-                  value={this.state.activeTab}
+                  value={activeTab}
                   indicatorColor="primary"
                   textColor="primary"
                   onChange={this.handleActiveTab}>
@@ -143,58 +120,100 @@ class HomePage extends Component {
                   onChangeIndex={this.handleActiveTabSwipe}
                 >
                   <div className="padding-15">
-                  <ExpansionPanel expanded={expanded === 'project-1'} onChange={this.handleExpand('project-1')}>
-                    <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                      <Typography className={classes.heading}>ArtXperience</Typography>
-                      <Typography className={classes.secondaryHeading}>Art Portfolio/Community Web App</Typography>
-                    </ExpansionPanelSummary>
-                    <ExpansionPanelDetails>
-                      <Typography>
-                        
-                      </Typography>
-                    </ExpansionPanelDetails>
-                  </ExpansionPanel>
-                  <ExpansionPanel expanded={expanded === 'project-2'} onChange={this.handleExpand('project-2')}>
-                    <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                      <Typography className={classes.heading}>Chat Room</Typography>
-                      <Typography className={classes.secondaryHeading}>
-                        Chat Application [COMP3133 Assignment]
-                      </Typography>
-                    </ExpansionPanelSummary>
-                    <ExpansionPanelDetails>
-                        <Typography>
+                  <Expandable onChange={this.handleExpand('project-1')}
+                    Heading="ArtXperience" expanded={expanded === "project-1"}
+                    Subheading={<Capsule label="Art Portfolio/Community Web App"/>}>
+                    <div className="expandable-details-item">
+                      <div className="expandable-details-item-label">
+                        <Capsule label="Technology"/>
+                      </div>
+                      <div className="expandable-details-item-desc">
+                        MongoDB, Express, React, NodeJS
+                      </div>
+                    </div>
+                    <div className="expandable-details-item">
+                      <div className="expandable-details-item-label">
+                        <Capsule label="Repository"/>
+                      </div>
+                      <div className="expandable-details-item-desc">
+                        <Link PageName="GitLab"/>
+                      </div>
+                    </div>
+                  </Expandable>
+                  <Expandable onChange={this.handleExpand('project-2')}
+                    Heading="Chat Room" expanded={expanded === "project-2"}
+                    Subheading={<Capsule label="Chat Application [COMP3133 Assignment]"/>}>
+                    <div className="expandable-details-item">
+                      <div className="expandable-details-item-label">
+                        <Capsule label="Technology"/>
+                      </div>
+                      <div className="expandable-details-item-desc">
+                        MongoDB, Express, HTML5/CSS3, NodeJS
+                      </div>
+                    </div>
+                    <div className="expandable-details-item">
+                      <div className="expandable-details-item-label">
+                        <Capsule label="Repository"/>
+                      </div>
+                      <div className="expandable-details-item-desc">
+                        <Link PageName="GitHub"/>
+                      </div>
+                    </div>
+                  </Expandable>
+                  <Expandable onChange={this.handleExpand('project-3')}
+                    Heading="Gamer Friends' List" expanded={expanded === 'project-3'}
+                    Subheading={<Capsule label="Pseudo Friends' List App [COMP3123 Assignment]"/>}>
+                    <div className="expandable-details-item">
+                      <div className="expandable-details-item-label">
+                        <Capsule label="Technology"/>
+                      </div>
+                      <div className="expandable-details-item-desc">
+                        MongoDB, Express, AngularJS, NodeJS
+                      </div>
+                    </div>
+                    <div className="expandable-details-item">
+                      <div className="expandable-details-item-label">
+                        <Capsule label="Repository"/>
+                      </div>
+                      <div className="expandable-details-item-desc">
+                        <Link PageName="GitHub"/>
+                      </div>
+                    </div>
+                  </Expandable>
+                  <Expandable onChange={this.handleExpand('project-4')}
+                    Heading="Versus" expanded={expanded === 'project-4'}
+                    Subheading={<Capsule label="Tournament Brackets Web App"/>}>
+                    <div className="expandable-details-item">
+                      <div className="expandable-details-item-label">
+                        <Capsule label="Technology"/>
+                      </div>
+                      <div className="expandable-details-item-desc">
+                        MySQL &amp; PHP
+                      </div>
+                    </div>
+                    <div className="expandable-details-item">
+                      <div className="expandable-details-item-label">
+                        <Capsule label="Repository"/>
+                      </div>
+                      <div className="expandable-details-item-desc">
+                        <Link PageName="GitLab"/>
+                      </div>
+                    </div>
+                  </Expandable>
+                  </div>
+                  <div className="padding-15">
+                  <Expandable onChange={this.handleExpand('gbc-t127')}
+                    Heading="T127 - Computer Programmer Analyst" 
+                    expanded={expanded === 'gbc-t127'}
+                    Subheading={<Capsule label="George Brown College - Casa Loma"/>}>
+                    
+                  </Expandable>
+                  </div>
+                  <div className="padding-15">
+                    <Expandable onChange={this.handleExpand('job-resources')}
+                      Heading="Resources" expanded={expanded === 'job-resources'}>
 
-                        </Typography>
-                    </ExpansionPanelDetails>
-                  </ExpansionPanel>
-                  <ExpansionPanel expanded={expanded === 'project-3'} onChange={this.handleExpand('project-3')}>
-                    <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                      <Typography className={classes.heading}>Gamer Friends' List</Typography>
-                      <Typography className={classes.secondaryHeading}>
-                        Pseudo Friends List App [COMP3123 Assignment]
-                      </Typography>
-                    </ExpansionPanelSummary>
-                    <ExpansionPanelDetails>
-                        
-                    </ExpansionPanelDetails>
-                  </ExpansionPanel>
-                  <ExpansionPanel expanded={expanded === 'project-4'} onChange={this.handleExpand('project-4')}>
-                    <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                      <Typography className={classes.heading}>Versus</Typography>
-                      <Typography className={classes.secondaryHeading}>
-                        Tournament Brackets Web App
-                      </Typography>
-                    </ExpansionPanelSummary>
-                    <ExpansionPanelDetails>
-                        
-                    </ExpansionPanelDetails>
-                  </ExpansionPanel>
-                  </div>
-                  <div className="padding-15">
-                    Item Two
-                  </div>
-                  <div className="padding-15">
-                    Item Three
+                    </Expandable>
                   </div>
                 </SwipeableViews>
               </ContentBlock>
@@ -206,4 +225,4 @@ class HomePage extends Component {
 	}
 }
 
-export const Home = withStyles(styles)(HomePage);
+export { Home };
