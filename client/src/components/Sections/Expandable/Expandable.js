@@ -22,6 +22,7 @@ const styles = theme => ({
     flexWrap: 'wrap',
     alignItems: 'center',
     alignContent: 'center',
+    flexGrow: 1,
     fontSize: theme.typography.pxToRem(15),
     flexBasis: '33.33%',
     flexShrink: 0,

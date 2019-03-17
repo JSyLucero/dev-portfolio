@@ -29,6 +29,10 @@ const styles = theme => ({
   },
   chip: {
     margin: theme.spacing.unit,
+    maxWidth: "100%",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis"
   },
 });
 
