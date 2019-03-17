@@ -121,8 +121,7 @@ class Home extends Component {
                 >
                   <div className="padding-15">
                     <Expandable onChange={this.handleExpand('project-1')}
-                      Heading="Developer's Portfolio" expanded={expanded === "project-1"}
-                      Subheading={<Capsule label=""/>}>
+                      Heading="Developer's Portfolio" expanded={expanded === "project-1"}>
                       <div className="expandable-details-item">
                         <div className="expandable-details-item-label">
                           <Capsule label="Technology"/>
@@ -141,7 +140,8 @@ class Home extends Component {
                       </div>
                     </Expandable>
                     <Expandable onChange={this.handleExpand('art-ax')}
-                      Heading="ArtXperience" expanded={expanded === "art-ax"}>
+                      Heading="ArtXperience" expanded={expanded === "art-ax"}
+                      Subheading={<Capsule label="Art Portfolio/Community Web App"/>}>
                       <div className="expandable-details-item">
                         <div className="expandable-details-item-label">
                           <Capsule label="Technology"/>
