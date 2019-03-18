@@ -5,3 +5,19 @@ Home
 .MuiTabs-root-1 button {
   min-width: initial;
 }
+
+.profile-picture {
+    min-width: 200px;
+    max-width: 100%;
+    min-height: 300px;
+    max-height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 800px) {
+  .profile-picture {
+    background-size: contain;
+  }
+}

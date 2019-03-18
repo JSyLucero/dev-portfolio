@@ -80,22 +80,16 @@ class Home extends Component {
 				{auth => (
 					<ContentArea FooterContent={<FooterContent/>}>
 						<ContentBlock className="d-flex">
-              <ContentBlock size={profilePicSize} className="d-flex" 
+              <ContentBlock size={profilePicSize} className="profile-picture d-flex" 
                 style={{
-                  minWidth: "200px",
-                  maxWidth: "100%",
-                  minHeight: "200px",
-                  maxHeight: "100%",
-                  background: "url('/assets/images/user-picture.jpg')", 
-                  backgroundPosition: "center", 
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat" 
+                  backgroundColor: "rgba(0, 0, 0, 1.0)",
+                  backgroundImage: "url('/assets/images/user-picture.jpg')", 
                 }}>
-                <div style={{background: "rgba(0, 0, 0, 0.125)", minWidth: "100%", minHeight: "100%"}}></div>
+                <div style={{background: "rgba(0, 0, 0, 0.1)", minWidth: "100%", minHeight: "100%"}}></div>
               </ContentBlock>
-              <ContentBlock size={aboutSize} className="d-flex padding-25" style={{ background: "rgba(230, 230, 230, 1.0)" }}>
+              <ContentBlock size={aboutSize} className="d-flex" style={{ background: "rgba(230, 230, 230, 1.0)" }}>
                 <ContentBlock className="padding-25" style={{boxShadow: "0 0 15px rgba(0, 0, 0, 0.07225)"}}>
-                  <h1 style={{fontSize: "1.3em"}}><Link Url="https://www.linkedin.com/in/jsylucero">Jullian Anthony Sy-Lucero <em style={{fontWeight: "normal"}}>(JSyLucero)</em></Link></h1>
+                  <h1 style={{fontSize: "1.3em"}}><Link Url="https://www.linkedin.com/in/jsylucero">Jullian Sy-Lucero <em style={{fontWeight: "normal"}}>(JSyLucero)</em></Link></h1>
                   <h2 style={{fontSize: "1.15em", fontWeight: "normal"}}>Modern Programmer with C# and JavaScript (React/ES6)</h2>
                   <section style={{ 
                     fontSize: "1.1em", 
@@ -108,7 +102,7 @@ class Home extends Component {
                     maxHeight: "325px",
                     overflowY: "overlay",
                   }}>
-                    Hello, my name is Jullian Anthony Sy-Lucero, and I'm a developer studying at George Brown College in 
+                    Hello, my name is Jullian Sy-Lucero, and I'm a developer studying at George Brown College in 
                     the T127 - Computer Programmer Analyst program, and am currently in my final year.
                     <br/><br/>
                     As a part of a team, in projects, I hope to contribute well and improve code as much as possible, and when tasked to learn new technologies, 
