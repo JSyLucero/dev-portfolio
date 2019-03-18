@@ -111,9 +111,9 @@ class Home extends Component {
                     Hello, my name is Jullian Anthony Sy-Lucero, and I'm a developer studying at George Brown College in 
                     the T127 - Computer Programmer Analyst program, and am currently in my final year.
                     <br/><br/>
-                    As a part of a team, in projects, I hope to contribute well and improve code as much as possible, and when tasked to learn new technologies 
-                    I learn quickly and agile in order to adapt and implement new technologies. I strongly believe in having a solid foundation in a code base, 
-                    and therefore when accepted, I wish to solve issues thoroughly while trying to implement quick, as well as readable, and modular/reusable code.
+                    As a part of a team, in projects, I hope to contribute well and improve code as much as possible, and when tasked to learn new technologies, 
+                    I learn quick and agile in order to adapt and implement new technologies. I strongly believe in having a solid foundation in a code base, 
+                    and I wish to solve issues thoroughly while trying to implement quick, as well as readable, and modular/reusable code.
                     <br/><br/>
                     I have knowledge in languages such as C#, JavaScript (ES6) and PHP along with various other languages.
                     <br/><br/>
@@ -149,12 +149,12 @@ class Home extends Component {
                         As a developer, I hope to really further my knowledge in development. I would like to maximize my skills to the fullest potential.
                         <br/><br/>
                         In the development field, I would like to improve and accelerate in creating, preparing and utilizing modular/reusable code.
-                        I wish to be able to contribute well to any team I join and ease up the workloads with this ability. Even further, I am willing 
+                        I wish to contribute well to any team I join and ease up the workloads with this ability. Even further, I am willing 
                         to learn new technologies, and programming languages, as it's fun, and broadens my pool of knowledge.
                         <br/><br/>
                         In complement to my skills as a developer, I also have a hobby in creating designs for personal use for projects related and non-related to software.
-                        So in being tasked with works related to design, I wish to be able to apply my knowledge, and help contribute to design teams when possible, especially
-                        in frontend development workloads. 
+                        So in being tasked with works related to design, I wish to apply my knowledge, and help contribute to design teams when possible, especially
+                        in front-end development workloads. 
                         <br/><br/>
                         I strongly believe in giving an amazing user experience, and enjoy building up applications that meet a user's needs. 
                       </div>
@@ -312,7 +312,15 @@ class Home extends Component {
                           <h3>Honours: </h3>
                         </div>
                         <div className="expandable-details-item-desc">
-                          <Capsule label="T127 Honours - Fall 2018" color="secondary" onClick={() => { window.open(`${location.protocol}//${location.host}/downloads/t127_fall_2018_honours_letter.pdf`, '_blank')}}/>
+                          <Capsule label="GBC T127 Honours - Fall 2018" color="primary" onClick={() => { window.open(`/downloads/t127_fall_2018_honours_letter.pdf`, '_blank')}}/>
+                        </div>
+                      </div>
+                      <div className="expandable-details-item">
+                        <div className="expandable-details-item-label">
+                          <h3>Transcripts: </h3>
+                        </div>
+                        <div className="expandable-details-item-desc">
+                          <Capsule label="GBC T127 - Fall 2018" color="secondary" onClick={() => { window.open(`/assets/images/t127_fall_2018_transcript.png`, '_blank')}}/>
                         </div>
                       </div>
                     </Expandable>
