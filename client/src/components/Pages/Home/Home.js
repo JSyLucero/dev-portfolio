@@ -312,7 +312,7 @@ class Home extends Component {
                           <h3>Honours: </h3>
                         </div>
                         <div className="expandable-details-item-desc">
-                          <Capsule label="GBC T127 Honours - Fall 2018" color="primary" onClick={() => { window.open(`/downloads/t127_fall_2018_honours_letter.pdf`, '_blank')}}/>
+                          <Capsule label="GBC T127 Honours - Fall 2018" color="secondary" onClick={() => { window.open(`/downloads/t127_fall_2018_honours_letter.pdf`, '_blank')}}/>
                         </div>
                       </div>
                       <div className="expandable-details-item">
