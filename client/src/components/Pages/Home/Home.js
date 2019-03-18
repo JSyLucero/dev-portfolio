@@ -161,8 +161,8 @@ class Home extends Component {
                           <h3>Downloads: </h3>
                         </div>
                         <div className="expandable-details-item-desc">
-                          <Capsule label="Resume" color="secondary" onClick={() => { window.open(`${location.protocol}//${location.host}/downloads/Resume_JSyLucero.pdf`, '_blank')}}/>
-                          <Capsule label="Cover Letter"/>
+                          <Capsule label="Resume" color="secondary" onClick={() => { window.open(`/downloads/Resume_JSyLucero.pdf`, '_blank')}}/>
+                          <Capsule label="Cover Letter" color="secondary" onClick={() => { window.open(`/downloads/Cover-Letter_JSyLucero.pdf`, '_blank') }}/>
                         </div>
                       </div>
                     </Expandable>
