@@ -42,6 +42,7 @@
     "webpack": "^4.19.0"
   },
   "scripts": {
+    "start": "npm run start:server",
     "start:server": "webpack && nodemon --exec babel-node -- bin/www",
     "start:dev": "npm-run-all --parallel start:server WDS",
     "setup": "yarn install && yarn start",
